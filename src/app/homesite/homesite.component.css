@@ -1,0 +1,64 @@
+.entries{
+  padding: 1em;
+  width: 100px;
+  border-style: solid;
+}
+.Names{
+  margin-left: 10%;
+  font-family: "courier new";
+  font-weight: bold;
+  font-size: 70px;
+}
+
+.goBackbutton{
+  background-color: #2673e2;
+  color: white;
+  margin: 1em;
+}
+
+.fullImage{
+  margin: 2%;
+  margin-top: 0%;
+  width: 90%;
+  align-content: center ;
+  border: 2px solid black;
+  border-radius: 2mm;
+}
+
+.SpecCard{
+  margin: 2%;
+  background-color: #6496e2;
+}
+
+.fullImgDiv{
+  text-align: center;
+  display: block;
+}
+
+.descriptiontext{
+  text-align: center;
+  color: white;
+  font-family: "courier new";
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.nameText{
+  text-align: center;
+  color: white;
+  font-family: "courier new";
+  font-weight: bold;
+  font-size: 50px;
+}
+
+.commentCard{
+  margin: 2%;
+  background-color: #69a9f8;
+}
+.commentText{
+  text-align: left;
+  color: white;
+  font-family: "courier new";
+  font-weight: bold;
+  font-size: 20px;
+}

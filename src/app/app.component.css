@@ -1,0 +1,44 @@
+
+.example-container {
+  border: 1px solid #555;
+  position: absolute;
+  top:0;
+  width: 100%;
+  bottom: 0;
+}
+
+.drawer{
+  width: 10%;
+  background-color: beige;
+}
+
+.mainContent{
+  background-color: rgb(175, 215, 215);
+}
+
+.toolbar{
+  background-color: black;
+  height: 10%;
+}
+
+#title{
+  color: white;
+  font-family: "Courier New";
+  font-weight: bold;
+  font-size: 175%;
+  margin: 0.7em;
+}
+
+#logo{
+  width: 90%;
+  padding: 5%;
+}
+
+.BigLetters{
+  font-family: "courier new";
+  font-weight: bold;
+  font-size: 2em;
+  margin: 5%;
+  text-align: center;
+}
+

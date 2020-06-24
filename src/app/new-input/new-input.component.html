@@ -1,0 +1,58 @@
+<div class="step-container yellow-theme">
+  <mat-card class="step">
+    <mat-vertical-stepper #stepper>
+      <mat-step [stepControl]="firstFormGroup">
+        <form [formGroup]="firstFormGroup">
+          <ng-template matStepLabel>Headline</ng-template>
+          <mat-form-field>
+            <input matInput name="Headline" placeholder="" formControlName="firstCtrl" data-lpignore="true" required>
+          </mat-form-field>
+          <div>
+            <button mat-raised-button matStepperNext style="background-color: dodgerblue; color: white" type="submit" >Next</button>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step [stepControl]="secondFormGroup">
+        <form [formGroup]="secondFormGroup">
+          <ng-template matStepLabel>Article</ng-template>
+          <mat-form-field>
+            <input matInput name="Article" placeholder="" formControlName="secondCtrl" data-lpignore="true" required>
+          </mat-form-field>
+
+          <div>
+            <button mat-stroked-button matStepperPrevious style="margin-right: 1em">Back</button>
+            <button mat-raised-button matStepperNext style="background-color: dodgerblue; color: white" (click)="getValues()" type="submit">Next</button>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step [stepControl]="thirdFormGroup">
+        <form [formGroup]="thirdFormGroup">
+          <ng-template matStepLabel>Verify information</ng-template>
+          <p>News Headline: {{this.Headline}}</p>
+          <p>News Article: {{this.description}}</p>
+          <p style="padding-left: 1em; margin-bottom: 0">Is this the correct information, if so, enter yes below</p>
+          <mat-form-field>
+            <input matInput name="verify" placeholder="yes" formControlName="verifyCtrl">
+          </mat-form-field>
+          <div>
+            <button mat-stroked-button matStepperPrevious style="margin-right: 1em">Back</button>
+            <button mat-raised-button matStepperNext style="background-color: dodgerblue; color: white" (click)="this.submit()" type="submit">Finish</button>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step>
+        <ng-template matStepLabel>Finish</ng-template>
+        <div *ngIf="loading">
+          <mat-spinner></mat-spinner>
+        </div>
+        <div *ngIf="!loading">
+          <p *ngIf="gotError">An error occurred while processing your request. Please try again.</p>
+          <p style="padding: 1em">{{response}}</p>
+          <div>
+            <button mat-stroked-button (click)="stepper.reset();">Create Another</button>
+          </div>
+        </div>
+      </mat-step>
+    </mat-vertical-stepper>
+  </mat-card>
+</div>

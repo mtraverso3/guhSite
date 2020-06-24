@@ -1,0 +1,33 @@
+
+<div class="navbar">
+    <mat-drawer-container class="example-container">
+      <mat-drawer class="drawer" mode="side" opened [ngStyle]="{width: navWidth + '%'}">
+        <div>
+          <a (click)="openDrawer()"> <img id="logo" src="../../assets/logo.gif"/></a>
+        </div>
+        <div>
+          <div *ngIf="this.sideNavService">
+            <h2 (click)="GoHome()" class="BigLetters">Home Menu</h2>
+            <h2 class="BigLetters">MiniLessons</h2>
+            <h2 class="BigLetters">Mammals</h2>
+            <h2 class="BigLetters">Amphibians</h2>
+          </div>
+          <div *ngIf="!this.sideNavService">
+            <h2 class="BigLetters">H</h2>
+            <h2 class="BigLetters">M</h2>
+            <h2 class="BigLetters">M</h2>
+            <h2 class="BigLetters">A</h2>
+          </div>
+        </div>
+      </mat-drawer>
+      <mat-drawer-content class="mainContent" [ngStyle]="{'margin-left': (navWidth) + '%'}">
+        <div>
+          <mat-toolbar class="toolbar">
+            <p id="title">Critterpedia</p>
+            <p style="color:white; font-family: 'Courier New'; font-weight: bold;">{{this.oneLiner}}</p>
+          </mat-toolbar>
+        </div>
+        <router-outlet></router-outlet>
+      </mat-drawer-content>
+    </mat-drawer-container>
+</div>

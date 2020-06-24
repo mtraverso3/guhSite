@@ -1,0 +1,31 @@
+<div *ngIf="this.currentAnimal === null">
+  <mat-list>
+    <mat-list-item *ngFor="let entry of entries; let currIndex = index" class="entries" style="width: 90%; margin: 1%; padding: 2em" (click)="openAnimal(currIndex)">
+      <img src="{{entry.thumbnailLoc}}" alt="" style=" height: 200%;">
+      <h2 class="Names">{{entry.name}}</h2>
+    </mat-list-item>
+  </mat-list>
+</div>
+<div *ngIf="this.currentAnimal !== null">
+  <mat-card class="SpecCard">
+    <h2 class="nameText">{{this.currentAnimal.name}}</h2>
+    <div class="fullImgDiv">
+      <img class="fullImage" src="{{this.currentAnimal.fullImage}}">
+    </div>
+    <p class="descriptiontext">
+      {{this.currentAnimal.description}}
+    </p>
+    <mat-card class="commentCard">
+      <mat-form-field class="example-full-width">
+        <mat-label style="color: white">Comment</mat-label>
+        <input style="color: white" matInput [formControl]="commentFormControl"
+               placeholder="Ex. Great Drawing!">
+      </mat-form-field>
+      <button mat-button class="goBackbutton" (click)="submitComment()">Submit</button>
+      <div *ngFor="let comment of this.currentAnimal.comments" >
+        <p class="commentText">{{comment}}</p>
+      </div>
+    </mat-card>
+  </mat-card>
+  <button mat-button (click)="closeAnimal()" class="goBackbutton">Go Back</button>
+</div>
