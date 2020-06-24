@@ -91,7 +91,7 @@ export class NewPostInputComponent implements OnInit {
   submit(){
     var formData = new FormData();
     formData.append("image", this.img);
-    formData.append("thumnail", this.thumbnail);
+    formData.append("thumbnail", this.thumbnail);
 
     this.response = this.api.uploadCreature(formData, this.name, this.description, this.tags.toString());
 
